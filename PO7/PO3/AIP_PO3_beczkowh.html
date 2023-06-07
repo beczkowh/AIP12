@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quick and Merge sorts</title>
+  </head>
+  <body>
+    <h1>Quick and Merge sort the randomly generated numbers</h1>
+    <button id="rand" onclick="rand()">Generate random numbers</button><br />
+    <script>
+      function rand() {
+        const points1 = new Array(12)
+          .fill(0)
+          .map((_) => (Math.random() * 12) | 0);
+        document.getElementById("num").innerHTML = points1;
+      }
+    </script>
+    <h3 id="num"></h3>
+    <br />
+    <button id="quick" onclick="quick()">Try Quick Sort</button>
+    <script>
+      function quickSort(arr) {
+        if (arr.length <= 1) return arr;
+        var pivot = arr[0];
+        var before = [];
+        var after = [];
+        for (var i = 1; i < arr.length; i++) {
+          arr[i] <= pivot ? before.push(arr[i]) : after.push(arr[i]);
+        }
+        return quickSort(before).concat(pivot, quickSort(after));
+      }
+      function quick() {
+        const numbers = document
+          .getElementById("num")
+          .innerHTML.split(",")
+          .map(Number);
+        document.getElementById("q").innerHTML = quickSort(numbers);
+      }
+    </script>
+    <h3 id="q"></h3>
+    <br />
+    <button id="merge" onclick="mergeAll()">Try Merge Sort</button>
+    <script>
+      function merge(before, after) {
+        let resultArray = [];
+        while (before.length && after.length) {
+          if (before[0] < after[0]) {
+            resultArray.push(before.shift());
+          } else {
+            resultArray.push(after.shift());
+          }
+        }
+        return [...resultArray, ...before, ...after];
+      }
+      function mergeSort(arr) {
+        if (arr.length <= 1) return arr;
+        var middle = Math.floor(arr.length / 2);
+        var before = mergeSort(arr.slice(0, middle));
+        var after = mergeSort(arr.slice(middle));
+        return merge(before, after);
+      }
+      function mergeAll() {
+        const numbers = document
+          .getElementById("num")
+          .innerHTML.split(",")
+          .map(Number);
+        document.getElementById("mer").innerHTML = mergeSort(numbers);
+      }
+    </script>
+    <h3 id="mer"></h3>
+  </body>
+</html>

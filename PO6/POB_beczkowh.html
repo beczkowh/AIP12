@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+    <link rel="stylesheet" href="POB.css">
+</head>
+<body>
+    <div class="centered-content">
+ <p>The project does not consist of an example webpage. </p>  
+    <button class="centered-button" onclick="downloadPDF()">Download Report</button>
+    <script>
+      function downloadPDF() {
+        var link = document.createElement('a');
+        link.href = 'PO6_beczkowh.pdf';
+        link.download = 'PO6_beczkowh.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    </script>
+    </div>
+</body>
+</html>

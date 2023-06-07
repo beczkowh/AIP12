@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso=8859-1">
+<title>jQuery treeView</title>
+<link rel="stylesheet" href="jquery.treeview/jquery.treeview.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<script src="jquery.treeview/lib/jquery.cookie.js" type="text/javascript"></script>
+<script src="jquery.treeview/jquery.treeview.js" type="text/javascript"></script>
+<script type="text/javascript" src="jquery.treeview/demo/demo.js"></script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.menu {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+}
+
+.right {
+  background-color: #e5e5e5;
+  float: left;
+  width: 20%;
+  padding: 15px;
+  margin-top: 7px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+</style>
+
+<script>
+    $(document).ready(function(){
+        $("#flip").click(function(){
+            $("#panel").slideDown("slow");
+        });
+    });
+    </script>
+     
+    <style> 
+    #panel, #flip {
+        padding: 9.5px;
+        text-align: center;
+        background-color: #e5e5e5;
+        border: solid 1px #e5e5e5;
+    }
+    
+    #panel {
+        padding: 50px;
+        display: none;
+    }
+    </style>
+</head>
+<body style="font-family:Verdana;color:#aaaaaa;">
+
+<div style="background-color:#e5e5e5;padding:15px;text-align:center;">
+  <h1>The responsive website</h1>
+</div>
+<div class="menu">
+ 
+  <div id="treecontrol" style="display:block;">
+    <a title="Collapse the entire tree below" href="#">Collapse All</a>
+    |
+    <a title=" Expand the entire tree below"  href="#">Expand All</a>
+  </div>
+  <ul id="red" class="treeview-red treeview">
+    <li class="expandable">
+      <div class="hitarea expandable-hitarea"></div>
+      <span class>Project 1</span>
+      <ul style="display:block;">
+          <li>
+            <span class='file'><a href="PO1\AIP_PO1_beczkowh.html">Project no. 1 – Tables and input manipulation using JavaScript</a></span>
+          </li>
+      </ul>
+    </li>    
+    <li class="expandable">
+      <div class="hitarea expandable-hitarea"></div>
+      <span class>Project 2</span>      
+      <ul style="display:block;">
+        <li>
+          <span class='file'><a href="PO2\AIP_pr2_beczkowh.html">Project no. 2 - Tableless table and stylizing</a></span>
+        </li>
+      </ul>
+    </li>
+    <li class="expandable lastExpandable">
+      <div class="hitarea expandable-hitarea lastExpandable-hitarea"></div>
+      <span class>Project 3</span>
+      <ul style="display:block;">
+      <li>
+        <span class='file'><a href="PO3\AIP_PO3_beczkowh.html">Project no. 3 – Sorting algorithms in Javascript</a></span>
+      </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+  <div class="main">
+      <div id="flip"><h2>Main body</h2></div>
+      <div id="panel"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design. </p></div>
+  </div>
+
+  <div class="right">
+    <h2>About</h2>
+    <p>This website is a responsive page containing menu with our three first exercises from Advanced Internet Programming course.</p>
+  </div>
+</div>
+
+<button onclick="downloadPDF()">Download Report</button>
+
+<script>
+  function downloadPDF() {
+    var link = document.createElement('a');
+    link.href = 'AIP_PO1_beczkowh.pdf';
+    link.download = 'AIP_PO1_beczkowh.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>
+
+</body>
+</html>
+
+

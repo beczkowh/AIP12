@@ -1,0 +1,28 @@
+body {
+   background-color: #FFF;
+   font-family: Times New Roman
+   font-size: 12px;
+   padding: 10px;
+}
+.table {
+   display: table;
+   border: 1px solid Orange;
+}
+
+.table .tr:nth-child(odd) {
+ background-color: #F9F9F9;
+}
+.tr{
+  display: table-row;
+  border-bottom: 1px solid #000;
+}
+.table .td {
+  display: table-cell;
+  padding: 10px;
+}
+.table .tr:last-child .td{
+  border: 0;
+}
+.clear {
+  clear: both;
+}

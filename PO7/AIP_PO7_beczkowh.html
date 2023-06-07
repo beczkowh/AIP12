@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.menu {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+}
+
+.right {
+  background-color: #e5e5e5;
+  float: left;
+  width: 20%;
+  padding: 15px;
+  margin-top: 7px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div1").fadeIn();
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn(3000);
+    });
+});
+</script>
+<script>
+    $(document).ready(function(){
+        $("#flip").click(function(){
+            $("#panel").slideDown("slow");
+        });
+    });
+    </script>
+     
+    <style> 
+    #panel, #flip {
+        padding: 9.5px;
+        text-align: center;
+        background-color: #e5e5e5;
+        border: solid 1px #e5e5e5;
+    }
+    
+    #panel {
+        padding: 50px;
+        display: none;
+    }
+    </style>
+</head>
+<body style="font-family:Verdana;color:#aaaaaa;">
+
+<div style="background-color:#e5e5e5;padding:15px;text-align:center;">
+  <h1>The responsive website</h1>
+</div>
+
+<div style="overflow:auto">
+  <div class="menu">
+    <button>Projects menu</button><br><br>
+    <div id="div1" style="width:375px;height:80px;display:none;background-color:lightgray;"><a href="PO1\AIP_PO1_beczkowh.html">Project no. 1 – Tables and input manipulation using JavaScript</a></div><br>
+    <div id="div2" style="width:375px;height:80px;display:none;background-color:lightsteelblue;"><a href="PO2\AIP_pr2_beczkowh.html">Project no. 2 - Tableless table and stylizing</a></div><br>
+    <div id="div3" style="width:375px;height:80px;display:none;background-color:lightslategrey;"><a href="PO3\AIP_PO3_beczkowh.html">Project no. 3 – Sorting algorithms in Javascript</a></div>
+  </div>
+
+  <div class="main">
+      <div id="flip"><h2>Main body</h2></div>
+      <div id="panel"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design. </p></div>
+  </div>
+
+  <div class="right">
+    <h2>About</h2>
+    <p>This website is a responsive page containing menu with our three first exercises from Advanced Internet Programming course.</p>
+  </div>
+</div>
+
+<button onclick="downloadPDF()">Download Report</button>
+
+<script>
+  function downloadPDF() {
+    var link = document.createElement('a');
+    link.href = 'AIP_PO7_beczkowh.pdf';
+    link.download = 'AIP_PO7_beczkowh.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>
+
+</body>
+</html>
+

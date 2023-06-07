@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border:1px solid black;
+  width: 80%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<form>
+<table>
+    <tr>
+      <td>First Name</td>
+       <td>
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+      </td> 
+     </tr>
+
+    <tr>
+      <td>Last Name</td>
+       <td>
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+      </td> 
+     </tr>
+
+    <tr>
+      <td>Age</td>
+       <td>   
+            <label for="age">Age</label>
+            <select name="age" id="age">
+   <option value="10">10</option>
+    	<option value="11">11</option>
+    	<option value="12">12</option>
+    	<option value="13">13</option>
+        <option value="14">14</option>
+    	<option value="15">15</option>
+    	<option value="16">16</option>
+    	<option value="17">17</option>
+        <option value="18">18</option>
+    	<option value="19">19</option>
+    	<option value="20">20</option>
+    	<option value="21">21</option>
+        <option value="22">22</option>
+    	<option value="23">23</option>
+    	<option value="24">24</option>
+    	<option value="25">25</option>
+        <option value="26">26</option>
+    	<option value="27">27</option>
+    	<option value="28">28</option>
+    	<option value="29">29</option>
+        <option value="30">30</option>
+    	<option value="31">31</option>
+    	<option value="32">32</option>
+    	<option value="33">33</option>
+        <option value="34">34</option>
+    	<option value="35">35</option>
+    	<option value="36">36</option>
+    	<option value="37">37</option>
+        <option value="38">38</option>
+    	<option value="39">39</option>
+    	<option value="40">40</option>
+    	<option value="41">41</option>
+        <option value="42">42</option>
+    	<option value="43">43</option>
+    	<option value="44">44</option>
+    	<option value="45">45</option>
+        <option value="46">46</option>
+    	<option value="47">47</option>
+    	<option value="48">48</option>
+    	<option value="49">49</option>
+        <option value="50">50</option>
+	<option value="51">51</option>
+        <option value="52">52</option>
+    	<option value="53">53</option>
+    	<option value="54">54</option>
+    	<option value="55">55</option>
+        <option value="56">56</option>
+    	<option value="57">57</option>
+    	<option value="58">58</option>
+    	<option value="59">59</option>
+        <option value="60">60</option>
+    	<option value="61">61</option>
+    	<option value="62">62</option>
+    	<option value="63">63</option>
+        <option value="64">64</option>
+    	<option value="65">65</option>
+    	<option value="66">66</option>
+    	<option value="67">67</option>
+        <option value="68">68</option>
+    	<option value="69">69</option>
+    	<option value="70">70</option>
+    	<option value="71">71</option>
+        <option value="72">72</option>
+	<option value="73">73</option>
+            </select>
+     </td> 
+     </tr>
+
+     <tr>
+        <td>Sex</td>
+         <td>
+            <input type="radio" id="female" name="sex"value="Female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="male" name="sex" value="Male">
+            <label for="male">Male</label><br>
+
+           </td> 
+       </tr>
+    <tr>
+        <td>Hobby</td>
+         <td>
+            <input type="checkbox" id="hobby1" name="hobby" value="Swimming">
+            <label for="hobby1"> Swimming</label><br>
+            <input type="checkbox" id="hobby2" name="hobby" value="Chess">
+            <label for="hobby2"> Chess</label><br>
+            <input type="checkbox"id="hobby3" name="hobby"value="Cooking">
+            <label for="hobby3"> Cooking</label>
+           </td> 
+       </tr>
+
+    <tr>
+    <td>
+            <input type="button" id="btn" onclick="myFunction()" value="Ok">
+            <p id="demo"></p>
+
+
+    </td>
+
+    <td>
+            <input type="button" value="Cancel">
+    </td> 
+       </tr>
+
+       <script>
+            document.getElementById("fname");
+            document.getElementById("lname");
+            document.getElementById("age").value;
+            document.getElementById("female").checked;
+            document.getElementById("male").checked;
+            document.getElementById("hobby1").checked;
+	    document.getElementById("hobby2").checked;
+	    document.getElementById("hobby3").checked;
+            </script>
+  </table>
+  </form> 
+  <script>
+        function myFunction() {
+          var txt = "";
+            txt += "First Name: " +  document.getElementById("fname").value + "\n";
+            txt += "Last Name: " +  document.getElementById("lname").value + "\n";
+            txt += "Age: " +  document.getElementById("age").value + "\n";
+            txt += "Sex: " ;
+            if (document.getElementById("female").checked == true){
+                txt +="Female"+"\n";
+            } else if (document.getElementById("male").checked == true){
+                txt +="Male"+"\n";
+            }
+            else {txt +="None chosen";};
+	    
+	    txt+="Hobby: "; 
+	    if (document.getElementById("hobby1").checked ==true){ 
+	       txt +="Swimming"+","; 
+	    } 
+	    if (document.getElementById("hobby2").checked ==true){ 
+	       txt +="Chess"+","; 
+	    }
+	    if (document.getElementById("hobby3").checked ==true){ 
+	       txt +="Cooking"+","; 
+	    } else { 
+	    ;
+	}
+		
+	    
+            alert(txt)
+        }
+        </script>
+</body>
+</html>
